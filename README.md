@@ -1,6 +1,6 @@
-# 🚀 JobArena - Full Stack Job Portal Web Application
+# 🚀 JobArena - Job Portal Web Application
 
-JobArena is a modern Full Stack Job Portal application built using **Spring Boot**, **Spring Security**, **Thymeleaf**, and **MySQL**.
+JobArena is a modern Job Portal application built using **Spring Boot**, **Spring Security**, **Thymeleaf**, and **MySQL**.
 
 The platform allows:
 
