@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Profile</title>
+
+    <style>
+        body{
+            font-family:Arial,sans-serif;
+            background:#f1f5f9;
+            margin:0;
+            padding:40px;
+        }
+
+        .card{
+            width:500px;
+            margin:auto;
+            background:white;
+            padding:30px;
+            border-radius:18px;
+            box-shadow:0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        h1{
+            text-align:center;
+            color:#0f172a;
+        }
+
+        .info{
+            margin-top:20px;
+            line-height:2;
+            font-size:18px;
+        }
+
+        .label{
+            font-weight:bold;
+            color:#334155;
+        }
+
+        img{
+            display:block;
+            margin:auto;
+            border-radius:50%;
+            width:120px;
+            height:120px;
+            object-fit:cover;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+
+    <h1>User Profile</h1>
+
+    <img th:if="${user.profilePicture != null}"
+         th:src="@{/uploads/{img}(img=${user.profilePicture})}">
+
+    <div class="info">
+        <div><span class="label">Name:</span> <span th:text="${user.name}"></span></div>
+        <div><span class="label">Username:</span> <span th:text="${user.username}"></span></div>
+        <div><span class="label">Role:</span> <span th:text="${user.role}"></span></div>
+    </div>
+
+</div>
+
+</body>
+</html>

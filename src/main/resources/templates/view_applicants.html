@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Applicants</title>
+
+<link rel="stylesheet" th:href="@{/css/style.css}">
+
+</head>
+
+<body>
+
+<div class="topbar">
+
+    <div class="brand">
+        Job<span>Arena</span>
+    </div>
+
+    <div>
+
+        <a class="nav-btn"
+           href="/employer/employer_dashboard">
+            Dashboard
+        </a>
+
+        <a class="nav-btn"
+           href="/employer/jobs/view_jobs_posted">
+            My Jobs
+        </a>
+
+        <a class="nav-btn logout"
+           href="/logout">
+            Logout
+        </a>
+
+    </div>
+
+</div>
+
+<div class="container">
+
+<h1>Applicants</h1>
+
+<div class="card"
+     th:each="app : ${applications}">
+
+    <h2 th:text="${app.applicant.username}"></h2>
+
+    <p>
+
+        <b>Status:</b>
+
+        <span th:text="${app.status}"></span>
+
+    </p>
+
+    <form th:action="@{/applications/update/{id}(id=${app.id})}"
+          method="post">
+
+        <select name="status">
+            
+
+            <option value="Applied Successfully">
+                Applied Successfully
+            </option>
+
+            <option value="ACCEPTED">
+                ACCEPTED
+            </option>
+
+            <option value="REJECTED">
+                REJECTED
+            </option>
+
+        </select>
+
+        <button class="btn"
+                type="submit">
+
+            Update Status
+
+        </button>
+
+    </form>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

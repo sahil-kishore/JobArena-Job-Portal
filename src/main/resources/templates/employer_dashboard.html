@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Employer Dashboard</title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div class="topbar">
+<div class="brand">Job<span>Arena</span></div>
+<a class="nav-btn " href="/employer/employer_dashboard">Home</a><a class="nav-btn " href="/employer/jobs/post">Post Job</a><a class="nav-btn " href="/employer/jobs/view_jobs_posted">My Jobs</a><a class="nav-btn " href="/employer/profile">Profile</a><a class="nav-btn logout" href="/logout">Logout</a>
+</div>
+
+<div class="container">
+
+<div class="hero">
+<div>
+<h1 th:text="'Welcome, ' + ${employer.username}"></h1>
+<p>Manage your jobs and applicants easily.</p>
+</div>
+
+<img th:if="${employer.profilePicture != null}"
+     th:src="@{/uploads/{img}(img=${employer.profilePicture})}">
+</div>
+
+<div class="card">
+<h2>Quick Actions</h2>
+<a class="btn" href="/employer/jobs/post">Post New Job</a>
+<a class="btn" href="/employer/jobs/view_jobs_posted">Manage Jobs</a>
+</div>
+
+</div>
+
+</body>
+</html>

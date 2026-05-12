@@ -1,0 +1,6 @@
+
+IMPORTANT: Ensure your Job.java contains:
+
+@ManyToOne
+@JoinColumn(name = "employer_id")
+private User employer;

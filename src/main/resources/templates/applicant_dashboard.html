@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Applicant Dashboard</title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div class="topbar">
+<div class="brand">Job<span>Arena</span></div>
+<a class="nav-btn " href="/applicant/applicant_dashboard">Home</a><a class="nav-btn " href="/jobs/apply_jobs">Search Jobs</a><a class="nav-btn " href="/applicant/profile">Profile</a>
+<a class="nav-btn"
+   href="/applications/track_status">
+   Applied Jobs
+</a><a class="nav-btn logout" href="/logout">Logout</a>
+</div>
+
+<div class="container">
+
+<div class="hero">
+<div>
+<h1>Welcome to JobArena</h1>
+<p>Find and apply for your dream jobs.</p>
+</div>
+</div>
+
+<div class="card">
+<h2>Get Started</h2>
+<a class="btn" href="/jobs/apply_jobs">Browse Available Jobs</a>
+</div>
+
+</div>
+
+</body>
+</html>

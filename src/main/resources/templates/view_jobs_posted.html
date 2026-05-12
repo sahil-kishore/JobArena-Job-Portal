@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>Manage Jobs</title>
+
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+<div class="topbar">
+
+    <div class="brand">
+        Job<span>Arena</span>
+    </div>
+
+    <div>
+
+        <a class="nav-btn"
+           href="/employer/employer_dashboard">
+            Dashboard
+        </a>
+
+        <a class="nav-btn"
+           href="/employer/jobs/post">
+            Post Job
+        </a>
+
+        <a class="nav-btn logout"
+           href="/logout">
+            Logout
+        </a>
+
+    </div>
+
+</div>
+
+<div class="container">
+
+<h1>Jobs You Posted</h1>
+
+<div th:each="job : ${jobs}" class="card">
+
+    <h2 th:text="${job.title}"></h2>
+
+    <p>
+        <b>Company:</b>
+        <span th:text="${job.company}"></span>
+    </p>
+
+    <p>
+        <b>Location:</b>
+        <span th:text="${job.location}"></span>
+    </p>
+
+    <p>
+        <b>Description:</b>
+        <span th:text="${job.description}"></span>
+    </p>
+
+    <div class="action-buttons">
+
+        <a class="btn"
+           th:href="@{/employer/jobs/edit/{id}(id=${job.id})}">
+            Edit
+        </a>
+
+        <a class="btn btn-danger"
+           th:href="@{/employer/jobs/delete/{id}(id=${job.id})}">
+            Delete
+        </a>
+
+        <a class="btn btn-success"
+           th:href="@{/employer/applicants/{id}(id=${job.id})}">
+            View Applicants
+        </a>
+
+    </div>
+
+</div>
+
+</div>
+
+</body>
+</html>

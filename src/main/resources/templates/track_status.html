@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Track Status</title></head>
+<body>
+<h1>Your Applications</h1>
+<div th:each="app : ${applications}">
+<h3 th:text="${app.job.title}"></h3>
+<p>Status: <span th:text="${app.status}"></span></p>
+</div>
+</body></html>
